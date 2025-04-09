@@ -1,0 +1,26 @@
+[2025-04-09T17:03:48.275+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-09T17:03:48.292+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_dag.transform_load_weather_data manual__2025-04-09T17:03:32.671847+00:00 [queued]>
+[2025-04-09T17:03:48.300+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_dag.transform_load_weather_data manual__2025-04-09T17:03:32.671847+00:00 [queued]>
+[2025-04-09T17:03:48.300+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 3
+[2025-04-09T17:03:48.318+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): transform_load_weather_data> on 2025-04-09 17:03:32.671847+00:00
+[2025-04-09T17:03:48.326+0000] {standard_task_runner.py:72} INFO - Started process 35158 to run task
+[2025-04-09T17:03:48.331+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'weather_dag', 'transform_load_weather_data', 'manual__2025-04-09T17:03:32.671847+00:00', '--job-id', '111', '--raw', '--subdir', 'DAGS_FOLDER/weather_dag.py', '--cfg-path', '/tmp/tmpuniz9322']
+[2025-04-09T17:03:48.333+0000] {standard_task_runner.py:105} INFO - Job 111: Subtask transform_load_weather_data
+[2025-04-09T17:03:48.376+0000] {task_command.py:467} INFO - Running <TaskInstance: weather_dag.transform_load_weather_data manual__2025-04-09T17:03:32.671847+00:00 [running]> on host ip-172-31-10-226.eu-north-1.compute.internal
+[2025-04-09T17:03:48.466+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='myemail@domain.com' AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='weather_dag' AIRFLOW_CTX_TASK_ID='transform_load_weather_data' AIRFLOW_CTX_EXECUTION_DATE='2025-04-09T17:03:32.671847+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-09T17:03:32.671847+00:00'
+[2025-04-09T17:03:48.468+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-04-09T17:03:48.468+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-04-09T17:03:48.469+0000] {logging_mixin.py:190} INFO - Current task name:transform_load_weather_data state:running start_date:2025-04-09 17:03:48.292677+00:00
+[2025-04-09T17:03:48.469+0000] {logging_mixin.py:190} INFO - Dag name:weather_dag and current dag run status:running
+[2025-04-09T17:03:48.470+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-09T17:03:48.476+0000] {logging_mixin.py:190} INFO - Data received:  {'coord': {'lon': 12.2797, 'lat': 46.7406}, 'weather': [{'id': 804, 'main': 'Clouds', 'description': 'overcast clouds', 'icon': '04d'}], 'base': 'stations', 'main': {'temp': 284.15, 'feels_like': 282.14, 'temp_min': 284.15, 'temp_max': 284.15, 'pressure': 1018, 'humidity': 32, 'sea_level': 1018, 'grnd_level': 816}, 'visibility': 10000, 'wind': {'speed': 2.57, 'deg': 310, 'gust': 8.75}, 'clouds': {'all': 91}, 'dt': 1744218005, 'sys': {'type': 1, 'id': 6809, 'country': 'IT', 'sunrise': 1744173272, 'sunset': 1744220995}, 'timezone': 7200, 'id': 3168508, 'name': 'Innichen', 'cod': 200}
+[2025-04-09T17:03:48.799+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-04-09T17:03:48.804+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-04-09T17:03:48.805+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=weather_dag, task_id=transform_load_weather_data, run_id=manual__2025-04-09T17:03:32.671847+00:00, execution_date=20250409T170332, start_date=20250409T170348, end_date=20250409T170348
+[2025-04-09T17:03:48.893+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-04-09T17:03:48.893+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-04-09T17:03:48.893+0000] {logging_mixin.py:190} INFO - Dag name:weather_dag queued_at:2025-04-09 17:03:32.685064+00:00
+[2025-04-09T17:03:48.894+0000] {logging_mixin.py:190} INFO - Task hostname:ip-172-31-10-226.eu-north-1.compute.internal operator:PythonOperator
+[2025-04-09T17:03:48.954+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-09T17:03:48.974+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-09T17:03:48.981+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

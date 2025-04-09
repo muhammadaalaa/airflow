@@ -1,0 +1,433 @@
+[2025-04-09T15:34:21.866+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-09T15:34:21.882+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_dag.is_weather_api_ready scheduled__2025-04-08T00:00:00+00:00 [queued]>
+[2025-04-09T15:34:21.890+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_dag.is_weather_api_ready scheduled__2025-04-08T00:00:00+00:00 [queued]>
+[2025-04-09T15:34:21.891+0000] {taskinstance.py:2867} INFO - Starting attempt 12 of 3
+[2025-04-09T15:34:21.916+0000] {taskinstance.py:2890} INFO - Executing <Task(HttpSensor): is_weather_api_ready> on 2025-04-08 00:00:00+00:00
+[2025-04-09T15:34:21.926+0000] {standard_task_runner.py:72} INFO - Started process 29332 to run task
+[2025-04-09T15:34:21.932+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'weather_dag', 'is_weather_api_ready', 'scheduled__2025-04-08T00:00:00+00:00', '--job-id', '52', '--raw', '--subdir', 'DAGS_FOLDER/weather_dag.py', '--cfg-path', '/tmp/tmpu0ncwxwe']
+[2025-04-09T15:34:21.933+0000] {standard_task_runner.py:105} INFO - Job 52: Subtask is_weather_api_ready
+[2025-04-09T15:34:22.011+0000] {task_command.py:467} INFO - Running <TaskInstance: weather_dag.is_weather_api_ready scheduled__2025-04-08T00:00:00+00:00 [running]> on host ip-172-31-10-226.eu-north-1.compute.internal
+[2025-04-09T15:34:22.115+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='myemail@domain.com' AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='weather_dag' AIRFLOW_CTX_TASK_ID='is_weather_api_ready' AIRFLOW_CTX_EXECUTION_DATE='2025-04-08T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='12' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-08T00:00:00+00:00'
+[2025-04-09T15:34:22.123+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-04-09T15:34:22.123+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-04-09T15:34:22.124+0000] {logging_mixin.py:190} INFO - Current task name:is_weather_api_ready state:running start_date:2025-04-09 15:34:21.882649+00:00
+[2025-04-09T15:34:22.124+0000] {logging_mixin.py:190} INFO - Dag name:weather_dag and current dag run status:running
+[2025-04-09T15:34:22.124+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-09T15:34:22.125+0000] {baseoperator.py:423} WARNING - HttpSensor.execute cannot be called outside TaskInstance!
+[2025-04-09T15:34:22.126+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:34:22.142+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:34:22.260+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:34:22.267+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:34:32.025+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:34:32.025+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:34:37.042+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:34:37.043+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:34:42.098+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:34:42.102+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:34:47.158+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:34:47.159+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:34:52.212+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:34:52.213+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:34:57.267+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:34:57.268+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:35:02.326+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:35:02.327+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:35:07.387+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:35:07.388+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:35:12.437+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:35:12.438+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:35:17.492+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:35:17.493+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:35:22.268+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:35:22.271+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:35:22.365+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:35:22.366+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:35:22.549+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:35:22.550+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:35:27.604+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:35:27.605+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:35:32.656+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:35:32.657+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:35:37.716+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:35:37.719+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:35:42.771+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:35:42.773+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:35:47.824+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:35:47.826+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:35:52.878+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:35:52.878+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:35:57.899+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:35:57.900+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:36:02.929+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:36:02.930+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:36:07.947+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:36:07.947+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:36:13.003+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:36:13.007+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:36:18.062+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:36:18.064+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:36:22.367+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:36:22.369+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:36:22.451+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:36:22.452+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:36:23.121+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:36:23.121+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:36:28.172+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:36:28.173+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:36:33.240+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:36:33.242+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:36:38.302+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:36:38.302+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:36:43.376+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:36:43.377+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:36:48.432+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:36:48.432+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:36:53.482+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:36:53.483+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:36:58.531+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:36:58.532+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:37:03.579+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:37:03.580+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:37:08.630+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:37:08.631+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:37:13.681+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:37:13.683+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:37:18.746+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:37:18.746+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:37:22.452+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:37:22.459+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:37:22.540+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:37:22.540+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:37:23.814+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:37:23.815+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:37:28.871+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:37:28.871+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:37:33.930+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:37:33.931+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:37:38.978+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:37:38.979+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:37:44.029+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:37:44.029+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:37:49.077+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:37:49.077+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:37:54.134+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:37:54.136+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:37:59.187+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:37:59.189+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:38:04.247+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:38:04.247+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:38:09.301+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:38:09.301+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:38:14.327+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:38:14.328+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:38:19.377+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:38:19.377+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:38:22.541+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:38:22.549+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:38:22.645+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:38:22.645+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:38:24.443+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:38:24.444+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:38:29.496+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:38:29.497+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:38:34.550+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:38:34.551+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:38:39.599+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:38:39.600+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:38:44.649+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:38:44.650+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:38:49.697+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:38:49.698+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:38:54.751+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:38:54.752+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:38:59.806+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:38:59.806+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:39:04.862+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:39:04.862+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:39:09.912+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:39:09.914+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:39:14.965+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:39:14.965+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:39:20.021+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:39:20.022+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:39:22.649+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:39:22.652+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:39:22.771+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:39:22.772+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:39:25.077+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:39:25.078+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:39:30.142+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:39:30.143+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:39:35.190+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:39:35.191+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:39:40.209+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:39:40.210+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:39:45.261+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:39:45.264+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:39:50.328+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:39:50.329+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:39:55.391+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:39:55.392+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:40:00.444+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:40:00.446+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:40:05.499+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:40:05.499+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:40:10.559+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:40:10.560+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:40:15.612+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:40:15.612+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:40:20.670+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:40:20.671+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:40:22.772+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:40:22.776+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:40:22.858+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:40:22.858+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:40:25.723+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:40:25.723+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:40:30.777+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:40:30.778+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:40:35.829+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:40:35.830+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:40:40.850+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:40:40.851+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:40:45.913+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:40:45.914+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:40:50.991+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:40:50.992+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:40:56.014+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:40:56.015+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:41:01.039+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:41:01.040+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:41:06.092+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:41:06.092+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:41:11.141+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:41:11.141+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:41:16.198+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:41:16.199+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:41:21.248+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:41:21.248+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:41:22.859+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:41:22.862+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:41:22.952+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:41:22.953+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:41:26.306+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:41:26.307+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:41:31.324+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:41:31.324+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:41:36.373+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:41:36.373+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:41:41.422+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:41:41.423+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:41:46.483+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:41:46.483+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:41:51.541+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:41:51.543+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:41:56.593+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:41:56.594+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:42:01.646+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:42:01.647+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:42:06.700+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:42:06.702+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:42:11.751+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:42:11.751+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:42:16.772+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:42:16.773+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:42:21.820+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:42:21.821+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:42:22.954+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:42:22.956+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:42:23.035+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:42:23.036+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:42:26.889+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:42:26.889+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:42:31.943+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:42:31.943+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:42:36.995+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:42:36.995+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:42:42.057+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:42:42.057+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:42:47.111+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:42:47.112+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:42:52.140+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:42:52.140+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:42:57.197+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:42:57.200+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:43:02.257+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:43:02.257+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:43:07.280+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:43:07.281+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:43:12.335+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:43:12.336+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:43:17.383+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:43:17.383+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:43:22.428+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:43:22.428+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:43:23.037+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:43:23.040+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:43:23.133+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:43:23.133+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:43:27.480+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:43:27.481+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:43:32.536+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:43:32.537+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:43:37.592+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:43:37.593+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:43:42.654+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:43:42.656+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:43:47.705+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:43:47.705+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:43:52.752+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:43:52.752+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:43:57.809+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:43:57.809+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:44:02.868+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:44:02.868+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:44:07.888+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:44:07.889+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:44:12.948+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:44:12.949+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:44:18.000+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:44:18.000+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:44:23.057+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:44:23.058+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:44:23.134+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:44:23.137+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:44:23.227+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:44:23.227+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:44:28.108+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:44:28.108+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:44:33.156+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:44:33.156+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:44:38.203+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:44:38.204+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:44:43.262+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:44:43.262+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:44:48.295+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:44:48.296+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:44:53.349+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:44:53.350+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:44:58.404+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:44:58.405+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:45:03.453+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:45:03.454+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:45:08.507+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:45:08.510+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:45:13.557+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:45:13.558+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:45:18.604+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:45:18.605+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:45:23.228+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:45:23.231+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:45:23.329+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:45:23.329+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:45:23.659+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:45:23.659+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:45:28.714+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:45:28.723+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:45:33.772+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:45:33.773+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:45:38.834+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:45:38.837+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:45:43.894+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:45:43.895+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:45:48.945+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:45:48.949+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:45:54.015+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:45:54.016+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:45:59.071+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:45:59.071+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:46:04.093+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:46:04.093+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:46:09.155+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:46:09.159+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:46:14.186+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:46:14.186+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:46:19.241+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:46:19.242+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:46:23.330+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:46:23.333+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:46:23.429+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:46:23.430+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:46:24.294+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:46:24.295+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:46:29.351+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:46:29.352+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:46:34.415+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:46:34.416+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:46:39.450+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:46:39.450+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:46:44.478+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:46:44.479+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:46:49.531+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 29347 does not match the current pid 29332
+[2025-04-09T15:46:49.532+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-04-09T15:46:54.590+0000] {local_task_job_runner.py:346} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2025-04-09T15:46:54.590+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-04-09T15:46:54.599+0000] {process_utils.py:132} INFO - Sending 15 to group 29332. PIDs of all processes in the group: [29332]
+[2025-04-09T15:46:54.600+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 29332
+[2025-04-09T15:46:54.600+0000] {taskinstance.py:3094} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-04-09T15:46:54.606+0000] {taskinstance.py:3095} ERROR - Stacktrace: 
+  File "/home/ubuntu/airflow_venv/bin/airflow", line 8, in <module>
+    sys.exit(main())
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/__main__.py", line 62, in main
+    args.func(args)
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 254, in _run_task_by_selected_method
+    return _run_task_by_local_task_job(args, ti)
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 322, in _run_task_by_local_task_job
+    ret = run_job(job=job_runner.job, execute_callable=job_runner._execute)
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/jobs/job.py", line 421, in run_job
+    return execute_job(job, execute_callable=execute_callable)
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/jobs/job.py", line 450, in execute_job
+    ret = execute_callable()
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/jobs/local_task_job_runner.py", line 171, in _execute
+    self.task_runner.start()
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 55, in start
+    self.process = self._start_by_fork()
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/providers/http/sensors/http.py", line 169, in execute
+    return super().execute(context=context)
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/sensors/base.py", line 337, in execute
+    time.sleep(self._get_next_poke_interval(started_at, run_duration, poke_count))
+  File "/home/ubuntu/airflow_venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3095, in signal_handler
+    self.log.error("Stacktrace: \n%s", "".join(traceback.format_stack()))
+
+[2025-04-09T15:46:54.672+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-04-09T15:46:54.734+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=29332, status='terminated', exitcode=0, started='15:34:21') (29332) terminated with exit code 0

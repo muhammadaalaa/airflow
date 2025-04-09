@@ -1,0 +1,1053 @@
+[2025-04-09T13:37:42.366+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-09T13:37:42.379+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_dag.is_weather_api_ready manual__2025-04-09T13:18:29.078083+00:00 [queued]>
+[2025-04-09T13:37:42.388+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_dag.is_weather_api_ready manual__2025-04-09T13:18:29.078083+00:00 [queued]>
+[2025-04-09T13:37:42.388+0000] {taskinstance.py:2867} INFO - Starting attempt 6 of 3
+[2025-04-09T13:37:42.413+0000] {taskinstance.py:2890} INFO - Executing <Task(HttpSensor): is_weather_api_ready> on 2025-04-09 13:18:29.078083+00:00
+[2025-04-09T13:37:42.421+0000] {standard_task_runner.py:72} INFO - Started process 25006 to run task
+[2025-04-09T13:37:42.439+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'weather_dag', 'is_weather_api_ready', 'manual__2025-04-09T13:18:29.078083+00:00', '--job-id', '29', '--raw', '--subdir', 'DAGS_FOLDER/weather_dag.py', '--cfg-path', '/tmp/tmpckit_cw5']
+[2025-04-09T13:37:42.441+0000] {standard_task_runner.py:105} INFO - Job 29: Subtask is_weather_api_ready
+[2025-04-09T13:37:42.528+0000] {task_command.py:467} INFO - Running <TaskInstance: weather_dag.is_weather_api_ready manual__2025-04-09T13:18:29.078083+00:00 [running]> on host ip-172-31-10-226.eu-north-1.compute.internal
+[2025-04-09T13:37:42.700+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='myemail@domain.com' AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='weather_dag' AIRFLOW_CTX_TASK_ID='is_weather_api_ready' AIRFLOW_CTX_EXECUTION_DATE='2025-04-09T13:18:29.078083+00:00' AIRFLOW_CTX_TRY_NUMBER='6' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-09T13:18:29.078083+00:00'
+[2025-04-09T13:37:42.702+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-04-09T13:37:42.702+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-04-09T13:37:42.703+0000] {logging_mixin.py:190} INFO - Current task name:is_weather_api_ready state:running start_date:2025-04-09 13:37:42.380066+00:00
+[2025-04-09T13:37:42.703+0000] {logging_mixin.py:190} INFO - Dag name:weather_dag and current dag run status:running
+[2025-04-09T13:37:42.703+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-09T13:37:42.704+0000] {baseoperator.py:423} WARNING - HttpSensor.execute cannot be called outside TaskInstance!
+[2025-04-09T13:37:42.705+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T13:37:42.715+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T13:37:42.811+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T13:37:42.812+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T13:38:42.813+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T13:38:42.817+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T13:38:42.906+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T13:38:42.907+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T13:39:42.908+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T13:39:42.912+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T13:39:43.011+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T13:39:43.012+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T13:40:43.013+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T13:40:43.016+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T13:40:43.116+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T13:40:43.116+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T13:41:43.117+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T13:41:43.124+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T13:41:43.228+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T13:41:43.229+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T13:42:43.230+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T13:42:43.238+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T13:42:43.346+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T13:42:43.346+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T13:43:43.347+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T13:43:43.351+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T13:43:43.432+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T13:43:43.433+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T13:44:43.433+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T13:44:43.437+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T13:44:43.536+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T13:44:43.536+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T13:45:43.537+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T13:45:43.541+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T13:45:43.647+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T13:45:43.647+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T13:46:43.648+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T13:46:43.653+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T13:46:43.738+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T13:46:43.738+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T13:47:43.739+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T13:47:43.742+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T13:47:43.836+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T13:47:43.836+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T13:48:43.837+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T13:48:43.839+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T13:48:43.931+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T13:48:43.931+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T13:49:43.932+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T13:49:43.935+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T13:49:44.020+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T13:49:44.020+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T13:50:44.022+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T13:50:44.027+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T13:50:44.108+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T13:50:44.109+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T13:51:44.110+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T13:51:44.113+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T13:51:44.216+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T13:51:44.216+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T13:52:44.218+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T13:52:44.221+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T13:52:44.301+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T13:52:44.301+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T13:53:44.302+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T13:53:44.305+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T13:53:44.398+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T13:53:44.402+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T13:54:44.405+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T13:54:44.408+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T13:54:44.500+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T13:54:44.501+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T13:55:44.502+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T13:55:44.506+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T13:55:44.600+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T13:55:44.601+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T13:56:44.602+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T13:56:44.607+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T13:56:44.692+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T13:56:44.693+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T13:57:44.694+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T13:57:44.697+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T13:57:44.783+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T13:57:44.784+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T13:58:44.784+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T13:58:44.788+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T13:58:44.873+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T13:58:44.874+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T13:59:44.874+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T13:59:44.878+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T13:59:44.971+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T13:59:44.972+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:00:44.972+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:00:44.975+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:00:45.061+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:00:45.061+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:01:45.062+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:01:45.065+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:01:45.151+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:01:45.152+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:02:45.152+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:02:45.159+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:02:45.244+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:02:45.244+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:03:45.245+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:03:45.251+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:03:45.336+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:03:45.337+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:04:45.338+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:04:45.342+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:04:45.432+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:04:45.432+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:05:45.433+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:05:45.441+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:05:45.531+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:05:45.531+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:06:45.532+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:06:45.536+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:06:45.632+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:06:45.633+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:07:45.634+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:07:45.638+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:07:45.730+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:07:45.730+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:08:45.731+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:08:45.737+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:08:45.842+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:08:45.842+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:09:45.843+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:09:45.846+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:09:45.965+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:09:45.966+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:10:45.967+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:10:45.970+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:10:46.066+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:10:46.066+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:11:46.067+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:11:46.070+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:11:46.171+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:11:46.172+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:12:46.172+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:12:46.178+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:12:46.279+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:12:46.280+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:13:46.280+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:13:46.283+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:13:46.386+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:13:46.386+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:14:46.387+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:14:46.392+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:14:46.511+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:14:46.513+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:15:46.514+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:15:46.516+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:15:46.606+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:15:46.606+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:16:46.607+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:16:46.610+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:16:46.704+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:16:46.704+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:17:46.705+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:17:46.708+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:17:46.812+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:17:46.812+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:18:46.813+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:18:46.815+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:18:46.907+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:18:46.907+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:19:46.908+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:19:46.911+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:19:47.007+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:19:47.007+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:20:47.009+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:20:47.013+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:20:47.098+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:20:47.099+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:21:47.100+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:21:47.107+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:21:47.205+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:21:47.206+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:22:47.206+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:22:47.210+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:22:47.301+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:22:47.302+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:23:47.302+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:23:47.306+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:23:47.394+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:23:47.395+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:24:47.396+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:24:47.400+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:24:47.496+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:24:47.496+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:25:47.497+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:25:47.500+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:25:47.580+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:25:47.581+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:26:47.582+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:26:47.585+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:26:47.669+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:26:47.669+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:27:47.670+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:27:47.672+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:27:47.756+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:27:47.757+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:28:47.757+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:28:47.760+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:28:47.851+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:28:47.852+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:29:47.852+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:29:47.858+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:29:47.942+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:29:47.943+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:30:47.944+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:30:47.946+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:30:48.033+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:30:48.033+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:31:48.034+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:31:48.039+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:31:48.119+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:31:48.119+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:32:48.120+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:32:48.124+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:32:48.228+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:32:48.229+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:33:48.229+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:33:48.232+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:33:48.321+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:33:48.321+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:34:48.322+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:34:48.325+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:34:48.410+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:34:48.410+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:35:48.411+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:35:48.414+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:35:48.496+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:35:48.497+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:36:48.498+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:36:48.501+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:36:48.583+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:36:48.584+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:37:48.584+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:37:48.587+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:37:48.684+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:37:48.685+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:38:48.685+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:38:48.689+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:38:48.788+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:38:48.788+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:39:48.789+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:39:48.795+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:39:48.897+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:39:48.898+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:40:48.898+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:40:48.904+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:40:49.000+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:40:49.000+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:41:49.001+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:41:49.004+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:41:49.110+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:41:49.110+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:42:49.112+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:42:49.114+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:42:49.247+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:42:49.247+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:43:49.248+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:43:49.252+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:43:49.357+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:43:49.358+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:44:49.359+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:44:49.365+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:44:49.447+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:44:49.447+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:45:49.448+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:45:49.452+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:45:49.538+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:45:49.538+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:46:49.539+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:46:49.544+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:46:49.634+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:46:49.636+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:47:49.637+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:47:49.641+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:47:49.726+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:47:49.727+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:48:49.729+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:48:49.732+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:48:49.832+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:48:49.832+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:49:49.833+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:49:49.839+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:49:49.928+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:49:49.929+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:50:49.930+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:50:49.932+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:50:50.028+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:50:50.028+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:51:50.029+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:51:50.033+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:51:50.137+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:51:50.137+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:52:50.138+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:52:50.141+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:52:50.241+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:52:50.245+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:53:50.247+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:53:50.252+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:53:50.350+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:53:50.351+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:54:50.352+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:54:50.355+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:54:50.469+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:54:50.469+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:55:50.470+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:55:50.472+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:55:50.575+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:55:50.576+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:56:50.577+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:56:50.580+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:56:50.684+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:56:50.685+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:57:50.686+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:57:50.689+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:57:50.782+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:57:50.782+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:58:50.783+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:58:50.787+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:58:50.886+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:58:50.886+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T14:59:50.887+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T14:59:50.890+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T14:59:50.986+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T14:59:50.986+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:00:50.987+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:00:50.991+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:00:51.093+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:00:51.093+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:01:51.094+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:01:51.097+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:01:51.188+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:01:51.189+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:02:51.189+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:02:51.197+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:02:51.301+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:02:51.301+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:03:51.303+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:03:51.309+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:03:51.398+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:03:51.399+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:04:51.400+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:04:51.406+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:04:51.490+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:04:51.490+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:05:51.491+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:05:51.494+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:05:51.583+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:05:51.583+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:06:51.584+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:06:51.588+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:06:51.672+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:06:51.673+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:07:51.673+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:07:51.677+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:07:51.759+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:07:51.759+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:08:51.766+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:08:51.769+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:08:51.853+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:08:51.854+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:09:51.854+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:09:51.857+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:09:51.942+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:09:51.943+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:10:51.943+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:10:51.947+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:10:52.025+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:10:52.026+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:11:52.026+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:11:52.029+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:11:52.112+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:11:52.113+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:12:52.114+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:12:52.117+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:12:52.216+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:12:52.216+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:13:52.217+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:13:52.223+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:13:52.325+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:13:52.327+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:14:52.328+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:14:52.337+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:14:52.441+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:14:52.442+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:15:52.443+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:15:52.447+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:15:52.551+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:15:52.552+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:16:52.553+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:16:52.556+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:16:52.639+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:16:52.640+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:17:52.640+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:17:52.643+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:17:52.751+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:17:52.752+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:18:52.753+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:18:52.758+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:18:52.838+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:18:52.838+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:19:52.839+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:19:52.843+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:19:52.923+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:19:52.923+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:20:52.924+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:20:52.927+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:20:53.026+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:20:53.027+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:21:53.028+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:21:53.034+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:21:53.133+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:21:53.133+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:22:53.136+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:22:53.139+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:22:53.233+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:22:53.233+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:23:53.234+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:23:53.238+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:23:53.341+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:23:53.341+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:24:53.342+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:24:53.345+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:24:53.444+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:24:53.444+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:25:53.445+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:25:53.449+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:25:53.535+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:25:53.535+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:26:53.536+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:26:53.539+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:26:53.624+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:26:53.625+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:27:53.625+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:27:53.629+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:27:53.709+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:27:53.710+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:28:53.710+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:28:53.713+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:28:53.798+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:28:53.799+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:29:53.800+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:29:53.803+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:29:53.892+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:29:53.892+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:30:53.893+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:30:53.896+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:30:53.988+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:30:53.988+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:31:53.989+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:31:53.992+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:31:54.095+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:31:54.096+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:32:54.096+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:32:54.103+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:32:54.210+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:32:54.210+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:33:54.211+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:33:54.214+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:33:54.317+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:33:54.318+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:34:54.321+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:34:54.328+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:34:54.440+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:34:54.441+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:35:54.441+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:35:54.451+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:35:54.540+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:35:54.540+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:36:54.541+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:36:54.544+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:36:54.629+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:36:54.629+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:37:54.630+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:37:54.634+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:37:54.730+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:37:54.730+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:38:54.731+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:38:54.735+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:38:54.819+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:38:54.820+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:39:54.821+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:39:54.824+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:39:54.908+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:39:54.909+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:40:54.910+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:40:54.915+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:40:55.002+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:40:55.003+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:41:55.004+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:41:55.007+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:41:55.089+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:41:55.090+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:42:55.091+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:42:55.094+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:42:55.178+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:42:55.178+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:43:55.179+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:43:55.181+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:43:55.283+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:43:55.284+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:44:55.284+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:44:55.288+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:44:55.386+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:44:55.386+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:45:55.387+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:45:55.392+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:45:55.489+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:45:55.490+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:46:55.491+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:46:55.496+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:46:55.595+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:46:55.596+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:47:55.597+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:47:55.603+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:47:55.703+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:47:55.703+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:48:55.704+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:48:55.708+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:48:55.804+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:48:55.805+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:49:55.806+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:49:55.813+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:49:55.906+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:49:55.907+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:50:55.908+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:50:55.910+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:50:56.014+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:50:56.014+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:51:56.015+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:51:56.019+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:51:56.146+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:51:56.146+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:52:56.150+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:52:56.153+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:52:56.248+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:52:56.248+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:53:56.249+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:53:56.253+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:53:56.341+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:53:56.341+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:54:56.342+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:54:56.349+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:54:56.436+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:54:56.436+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:55:56.437+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:55:56.440+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:55:56.539+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:55:56.539+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:56:56.540+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:56:56.548+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:56:56.653+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:56:56.653+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:57:56.655+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:57:56.659+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:57:56.761+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:57:56.761+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:58:56.762+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:58:56.765+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:58:56.864+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:58:56.865+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T15:59:56.866+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T15:59:56.870+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T15:59:56.973+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T15:59:56.974+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:00:56.975+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:00:56.978+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:00:57.066+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:00:57.066+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:01:57.067+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:01:57.070+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:01:57.158+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:01:57.158+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:02:57.159+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:02:57.162+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:02:57.274+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:02:57.274+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:03:57.279+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:03:57.283+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:03:57.371+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:03:57.371+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:04:57.372+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:04:57.375+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:04:57.462+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:04:57.463+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:05:57.463+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:05:57.468+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:05:57.573+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:05:57.574+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:06:57.574+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:06:57.582+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:06:57.688+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:06:57.689+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:07:57.690+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:07:57.693+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:07:57.785+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:07:57.785+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:08:57.786+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:08:57.789+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:08:57.884+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:08:57.884+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:09:57.885+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:09:57.889+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:09:57.992+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:09:57.992+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:10:57.993+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:10:57.997+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:10:58.102+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:10:58.102+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:11:58.103+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:11:58.107+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:11:58.207+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:11:58.207+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:12:58.208+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:12:58.211+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:12:58.296+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:12:58.297+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:13:58.298+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:13:58.302+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:13:58.388+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:13:58.389+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:14:58.390+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:14:58.393+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:14:58.492+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:14:58.492+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:15:58.493+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:15:58.503+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:15:58.588+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:15:58.588+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:16:58.589+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:16:58.595+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:16:58.686+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:16:58.687+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:17:58.687+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:17:58.690+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:17:58.773+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:17:58.773+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:18:58.774+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:18:58.777+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:18:58.863+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:18:58.863+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:19:58.864+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:19:58.869+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:19:58.955+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:19:58.955+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:20:58.956+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:20:58.960+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:20:59.041+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:20:59.041+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:21:59.042+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:21:59.045+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:21:59.161+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:21:59.161+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:22:59.162+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:22:59.166+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:22:59.254+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:22:59.255+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:23:59.256+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:23:59.259+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:23:59.342+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:23:59.342+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:24:59.343+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:24:59.348+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:24:59.435+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:24:59.436+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:25:59.436+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:25:59.445+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:25:59.546+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:25:59.546+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:26:59.547+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:26:59.550+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:26:59.633+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:26:59.633+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:27:59.634+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:27:59.638+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:27:59.724+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:27:59.725+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:28:59.725+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:28:59.728+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:28:59.814+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:28:59.814+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:29:59.815+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:29:59.818+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:29:59.898+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:29:59.898+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:30:59.899+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:30:59.905+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:30:59.991+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:30:59.992+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:31:59.992+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:31:59.998+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:32:00.082+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:32:00.083+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:33:00.085+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:33:00.089+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:33:00.175+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:33:00.176+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:34:00.177+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:34:00.181+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:34:00.280+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:34:00.280+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:35:00.281+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:35:00.288+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:35:00.397+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:35:00.398+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:36:00.399+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:36:00.411+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:36:00.498+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:36:00.499+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:37:00.500+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:37:00.506+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:37:00.598+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:37:00.598+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:38:00.599+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:38:00.605+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:38:00.697+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:38:00.697+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:39:00.698+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:39:00.702+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:39:00.783+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:39:00.783+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:40:00.785+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:40:00.788+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:40:00.879+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:40:00.879+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:41:00.881+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:41:00.884+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:41:00.967+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:41:00.968+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:42:00.969+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:42:00.983+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:42:01.088+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:42:01.088+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:43:01.089+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:43:01.095+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:43:01.198+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:43:01.199+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:44:01.199+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:44:01.203+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:44:01.300+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:44:01.300+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:45:01.301+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:45:01.307+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:45:01.414+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:45:01.414+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:46:01.415+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:46:01.418+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:46:01.507+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:46:01.507+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:47:01.509+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:47:01.512+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:47:01.592+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:47:01.592+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:48:01.593+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:48:01.598+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:48:01.678+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:48:01.678+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:49:01.679+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:49:01.683+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:49:01.786+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:49:01.786+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:50:01.787+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:50:01.790+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:50:01.891+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:50:01.891+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:51:01.892+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:51:01.896+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:51:01.994+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:51:01.995+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:52:01.996+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:52:01.998+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:52:02.080+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:52:02.081+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:53:02.082+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:53:02.084+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:53:02.170+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:53:02.171+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:54:02.172+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:54:02.174+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:54:02.263+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:54:02.263+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:55:02.264+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:55:02.268+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:55:02.350+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:55:02.350+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:56:02.351+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:56:02.353+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:56:02.457+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:56:02.457+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:57:02.458+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:57:02.469+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:57:02.566+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:57:02.566+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:58:02.567+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:58:02.571+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:58:02.650+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:58:02.651+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T16:59:02.652+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T16:59:02.654+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T16:59:02.745+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T16:59:02.745+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:00:02.746+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:00:02.749+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:00:02.833+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:00:02.833+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:01:02.834+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:01:02.837+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:01:02.939+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:01:02.939+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:02:02.940+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:02:02.943+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:02:03.043+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:02:03.043+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:03:03.044+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:03:03.047+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:03:03.152+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:03:03.153+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:04:03.153+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:04:03.158+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:04:03.259+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:04:03.260+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:05:03.260+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:05:03.267+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:05:03.376+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:05:03.376+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:06:03.377+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:06:03.380+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:06:03.466+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:06:03.466+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:07:03.467+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:07:03.473+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:07:03.563+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:07:03.563+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:08:03.565+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:08:03.569+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:08:03.653+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:08:03.653+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:09:03.654+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:09:03.658+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:09:03.747+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:09:03.748+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:10:03.748+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:10:03.752+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:10:03.838+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:10:03.838+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:11:03.839+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:11:03.843+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:11:03.933+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:11:03.933+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:12:03.934+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:12:03.937+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:12:04.032+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:12:04.032+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:13:04.033+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:13:04.035+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:13:04.128+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:13:04.128+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:14:04.129+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:14:04.133+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:14:04.231+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:14:04.231+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:15:04.232+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:15:04.235+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:15:04.337+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:15:04.338+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:16:04.338+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:16:04.342+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:16:04.431+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:16:04.431+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:17:04.434+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:17:04.437+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:17:04.539+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:17:04.539+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:18:04.540+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:18:04.546+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:18:04.649+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:18:04.650+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:19:04.651+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:19:04.654+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:19:04.756+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:19:04.756+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:20:04.757+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:20:04.760+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:20:04.853+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:20:04.854+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:21:04.854+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:21:04.857+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:21:04.956+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:21:04.956+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:22:04.957+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:22:04.960+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:22:05.060+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:22:05.061+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:23:05.062+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:23:05.068+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:23:05.179+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:23:05.181+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:24:05.182+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:24:05.185+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:24:05.281+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:24:05.281+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:25:05.282+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:25:05.289+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:25:05.391+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:25:05.391+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:26:05.392+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:26:05.395+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:26:05.493+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:26:05.493+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:27:05.494+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:27:05.497+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:27:05.594+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:27:05.594+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:28:05.595+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:28:05.598+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:28:05.698+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:28:05.698+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:29:05.699+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:29:05.702+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:29:05.797+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:29:05.797+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:30:05.798+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:30:05.801+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:30:05.893+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:30:05.893+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:31:05.894+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:31:05.899+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:31:05.983+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:31:05.984+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:32:05.984+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:32:05.987+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:32:06.077+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:32:06.078+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:33:06.078+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:33:06.084+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:33:06.172+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:33:06.172+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:34:06.173+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:34:06.176+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:34:06.281+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:34:06.281+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:35:06.282+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:35:06.287+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:35:06.391+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:35:06.392+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:36:06.393+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:36:06.403+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:36:06.510+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:36:06.511+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:37:06.511+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:37:06.514+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:37:06.616+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:37:06.616+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:38:06.617+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:38:06.620+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:38:06.710+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:38:06.710+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:39:06.711+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:39:06.714+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:39:06.798+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:39:06.799+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:40:06.800+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:40:06.802+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:40:06.909+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:40:06.909+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:41:06.910+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:41:06.915+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:41:07.018+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:41:07.018+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:42:07.019+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:42:07.024+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:42:07.104+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:42:07.105+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:43:07.105+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:43:07.108+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:43:07.191+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:43:07.191+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:44:07.192+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:44:07.198+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:44:07.290+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:44:07.291+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:45:07.291+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:45:07.295+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:45:07.381+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:45:07.381+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:46:07.382+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:46:07.384+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:46:07.472+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:46:07.473+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:47:07.473+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:47:07.476+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:47:07.564+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:47:07.565+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:48:07.566+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:48:07.573+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:48:07.657+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:48:07.658+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:49:07.659+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:49:07.663+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:49:07.750+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:49:07.750+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:50:07.752+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:50:07.756+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:50:07.849+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:50:07.850+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:51:07.851+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:51:07.854+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:51:07.942+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:51:07.942+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:52:07.943+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:52:07.945+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:52:08.025+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:52:08.025+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:53:08.026+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:53:08.029+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:53:08.117+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:53:08.118+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:54:08.119+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:54:08.122+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:54:08.211+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:54:08.211+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:55:08.212+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:55:08.216+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:55:08.308+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:55:08.308+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:56:08.310+0000] {http.py:145} INFO - Poking: /data/S2.5/weather?q=Portland&APPID=4d13f07efe491003cd53c704f189b00f
+[2025-04-09T17:56:08.315+0000] {base.py:84} INFO - Retrieving connection 'weathermap_api'
+[2025-04-09T17:56:08.402+0000] {http.py:278} ERROR - HTTP error: Not Found
+[2025-04-09T17:56:08.402+0000] {http.py:279} ERROR - {"cod":"404","message":"Internal error"}
+[2025-04-09T17:57:06.694+0000] {taskinstance.py:3094} ERROR - Received SIGTERM. Terminating subprocesses.
