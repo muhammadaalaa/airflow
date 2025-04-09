@@ -73,7 +73,7 @@ with DAG(
     extract_weather_data = HttpOperator(
         task_id='extract_weather_data',
         http_conn_id='weathermap_api',
-        endpoint='/data/2.5/weather?q=' + country + 'f***************',
+        endpoint='/data/2.5/weather?q=' + country + 'f',
         method='GET',
         response_filter=lambda r: json.loads(r.text),
         log_response=True,
